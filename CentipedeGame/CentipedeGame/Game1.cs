@@ -22,6 +22,8 @@ namespace CentipedeGame
         public Texture2D[] text;
         public List<Mushroom> mushrooms;
 
+        int points;
+
         Random ran = new Random();
 
         public Game1()
@@ -96,7 +98,7 @@ namespace CentipedeGame
 
             for(int i = 0; i < mushrooms.Count; i++)
             {
-                //if(mousey.Intersects(mushrooms[i].rect) && !Oldmousey.Intersects(mushrooms[i].rect))//if the rect for the laser intersects the mushroom
+                //if(mousey.Intersects(mushrooms[i].rect) && !Oldmousey.Intersects(mushrooms[i].rect))//if the rect for the laser intersects the mushroom 
                 //{
                 //    mushrooms[i].health--;
                 //}
@@ -104,6 +106,7 @@ namespace CentipedeGame
                 if(mushrooms[i].health == 0)
                 {
                     mushrooms.RemoveAt(i);
+                    points += 600;
                     i--;
                 }
             }
